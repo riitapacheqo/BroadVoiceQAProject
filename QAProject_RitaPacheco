@@ -1,0 +1,116 @@
+1. What questions would you ask in order to clarify requirements?
+2. Specify 5 test cases to test this requirement
+
+
+
+1.
+How will the error messages be when the user doesn't fill all the mandatory fields?
+
+In the user creation image, we see that the email is not a mandatory field. Will it be possible to create the new user without email?
+
+In the 4th point we see that the email address, the first and last name will be displayed on the home page after the log in, but in the image provided we don't see the email and see other options. Will the email address also be present in the home page as specified?
+
+At last, what time will the user have to change is password? (to understand how much time should the temporary password last)
+
+
+
+2.
+
+TestPlan 1: Creating a valid user.
+
+Data to input:
+- Email: testuser1@example.com
+- First Name: John
+- Last Name: Doe
+
+Steps to reproduce: 
+- Navigate to the user creation page;
+- Write in the fields the data above; 
+- Click on the "save" button
+
+
+Expected outcome: 
+- Success on the creation of the new user; 
+- The system generates and sends the email to the new user;
+- The data on the field is correctly saved on the database tables;
+
+
+
+TestPlan 2: Validation of the minimum lenght of the fields.
+
+Data to input: 
+- Email: a@ex
+- First Name: X
+- Last Name: Y
+
+
+
+Steps to reproduce: 
+- Navigate to the user creation page;
+- Write in the fields the data above;
+- Click on the "save" button
+
+
+Expected outcome: 
+- The system validates if the field has more than 6 and less than 30 characteres;
+- The user is not created because the fields First and Last Name doesn't have a minimum of 6 characteres and presentes an error. 
+
+
+
+
+TestPlan 3: Validation of the maximum lenght of the fields.
+
+
+Data to input: 
+- Email: testenewuserintheapplication@exampleofexampleofexample.com
+- First Name: morethan10characterestest
+- Last Name: morethan12characterestest
+
+
+Steps to reproduce: 
+- Navigate to the user creation page;
+- Write in the fields the data above;
+- Click on the "save" button
+
+
+
+Expected outcome: 
+- The system validates if the field has more than 6 and less than 30 characteres;
+- The user is not created because the length of the email has more that 30 charaters and presents an error message. 
+
+
+
+TestPlan 4: Validation of the correct input.
+
+Data to input: 
+- Email: teste4@example.com
+- First Name: John
+- Last Name: Michael
+
+Steps to reproduce: 
+- Navigate to the user creation page;
+- Write in the fields the data above;
+- Click on the "save" button
+
+Expected outcome: 
+- The system validates if the field has more than 6 and less than 30 characteres;
+- The user is created successfully and its correctly saved on the database.
+
+
+ 
+TestPlan 5: Home Page Display after Log In successfully. 
+
+Data to input: 
+- Use the credentials above in the TestPlan 4 to log in successfully. 
+
+
+Steps to reproduce: 
+- Open the application homepage; 
+- Enter the user's email and the temporaru password that you received in your email;
+- Click on Log In to enter the homepage.
+
+
+Expected outcome: 
+- The user logs in successfully and the homepage opens. 
+- The homepage displays correctly the email address, first and last name as per the requirements. 
+
